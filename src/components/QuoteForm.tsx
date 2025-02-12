@@ -31,16 +31,16 @@ const RequestQuoteForm = () => {
         <h2 className="text-heading-1 font-bold text-center mb-36">REQUEST A QUOTE</h2>
         <form onSubmit={handleSubmit(onSubmit)} className="w-full space-y-12">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <Input label="Name" name="name" register={register} required error={errors.name?.message} />
-            <Input label="E-mail" name="email" type="email" register={register} required error={errors.email?.message} />
-            <Input label="Phone Number" name="phone" register={register} required error={errors.phone?.message} />
-            <Select label="Time Frame" name="timeFrame" options={["1 Week", "2 Weeks", "1 Month"]} register={register} required error={errors.timeFrame?.message} />
-            <Select label="Size" name="size" options={["Small", "Medium", "Large"]} register={register} required error={errors.size?.message} />
-            <Select label="Quantity" name="quantity" options={["1", "5", "10", "50"]} register={register} required error={errors.quantity?.message} />
+            <Input label="Name" name="name" register={register} required error={errors.name?.message as string | undefined} />
+            <Input label="E-mail" name="email" type="email" register={register} required error={errors.email?.message as string | undefined} />
+            <Input label="Phone Number" name="phone" register={register} required error={errors.phone?.message as string | undefined} />
+            <Select label="Time Frame" name="timeFrame" options={["1 Week", "2 Weeks", "1 Month"]} register={register} required error={errors.timeFrame?.message as string | undefined} />
+            <Select label="Size" name="size" options={["Small", "Medium", "Large"]} register={register} required error={errors.size?.message as string | undefined} />
+            <Select label="Quantity" name="quantity" options={["1", "5", "10", "50"]} register={register} required error={errors.quantity?.message as string | undefined} />
           </div>
 
           <div className="w-full">
-            <Input label="Please Describe Your Project" name="description" register={register} required error={errors.description?.message} />
+            <Input label="Please Describe Your Project" name="description" register={register} required error={errors.description?.message as string | undefined} />
           </div>
 
           <p className="text-sm text-gray-500 text-center">
