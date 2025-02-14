@@ -13,7 +13,6 @@ import revolt from '@/../public/brands/revolt.png'
 import ultra from '@/../public/brands/Ultraviolette_Logo 1.png'
 import tork from '@/../public/brands/tork.png'
 
-
 const brands = [
   { src: hero, alt: "Hero" },
   { src: honda, alt: "Honda" },
@@ -31,22 +30,22 @@ const brands = [
 
 export default function BrandSection() {
   return (
-    <div className="py-20 bg-white text-center">
+    <div className="py-16 bg-white text-center">
       {/* Title */}
-      <h2 className="text-heading-1 font-bold mb-8">
-        LOREM IPSUM DOLOR SIT AMET <br /> CONSECTETUR. COMMODO LEO AMET.
+      <h2 className="text-xl md:text-heading-1 font-bold mb-6 md:mb-12 px-4">
+        LOREM IPSUM DOLOR SIT AMET <br className="hidden md:block" /> CONSECTETUR. COMMODO LEO AMET.
       </h2>
 
-      {/* Logos Grid */}
-      <div className="grid grid-cols-2 mt-16 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-16 max-w-7xl mx-auto">
+      {/* Responsive Logos Grid */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10 md:gap-14 lg:gap-16 max-w-6xl mx-auto px-4">
         {brands.map((brand, index) => (
           <div key={index} className="flex justify-center items-center">
             <Image
               src={brand.src}
               alt={brand.alt}
-              width={100}
-              height={80}
-              className="max-w-[120px] md:max-w-[150px] object-contain"
+              width={120}
+              height={100}
+              className="w-20 h-auto md:w-28 lg:w-32 object-contain"
             />
           </div>
         ))}

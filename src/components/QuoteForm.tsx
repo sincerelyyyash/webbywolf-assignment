@@ -25,11 +25,12 @@ const RequestQuoteForm = () => {
   };
 
   return (
-
     <div className="flex justify-center items-center min-h-screen px-4 w-full">
-      <div className="w-full p-8">
-        <h2 className="text-heading-1 font-bold text-center mb-36">REQUEST A QUOTE</h2>
-        <form onSubmit={handleSubmit(onSubmit)} className="w-full space-y-12">
+      <div className="w-full max-w-lg sm:max-w-2xl lg:max-w-4xl p-6 sm:p-8 bg-white shadow-md rounded-lg">
+        <h2 className="text-heading-1 font-bold text-center mb-10 sm:mb-16">REQUEST A QUOTE</h2>
+        
+        <form onSubmit={handleSubmit(onSubmit)} className="w-full space-y-8">
+          {/* Form Fields */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <Input label="Name" name="name" register={register} required error={errors.name?.message as string | undefined} />
             <Input label="E-mail" name="email" type="email" register={register} required error={errors.email?.message as string | undefined} />
@@ -39,16 +40,21 @@ const RequestQuoteForm = () => {
             <Select label="Quantity" name="quantity" options={["1", "5", "10", "50"]} register={register} required error={errors.quantity?.message as string | undefined} />
           </div>
 
+          {/* Description */}
           <div className="w-full">
             <Input label="Please Describe Your Project" name="description" register={register} required error={errors.description?.message as string | undefined} />
           </div>
 
+          {/* Terms & Conditions */}
           <p className="text-sm text-gray-500 text-center">
             By submitting this form you agree to our <a href="#" className="text-blue-500 underline">Terms of Service</a> and <a href="#" className="text-blue-500 underline">Privacy Policy</a>.
           </p>
-          <div className="flex justify-center items-center">
 
-            <button type="submit" className="w-1/3 bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 transition">Submit</button>
+          {/* Submit Button */}
+          <div className="flex justify-center">
+            <button type="submit" className="w-full sm:w-1/2 lg:w-1/3 bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 transition">
+              Submit
+            </button>
           </div>
         </form>
       </div>

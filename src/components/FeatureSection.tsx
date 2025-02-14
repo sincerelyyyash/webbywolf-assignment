@@ -33,26 +33,21 @@ function FeatureSection() {
   ];
 
   return (
-    <div
-      style={{
-        backgroundImage: `url('/background_feature.png')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-      }}
-    >
-      <section className="py-16 px-6 md:px-12">
+    <div className="bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url('/background_feature.png')` }}>
+      <section className="py-16 px-4 sm:px-8 md:px-12 lg:px-16">
         <div className="max-w-7xl mx-auto text-center">
           {/* Header */}
-          <p className="text-blue-800 font-semibold text-subheading-1">Lorem Ipsum</p>
-          <h2 className="text-heading-1 font-bold mt-2">LOREM IPSUM DOLOR SIT</h2>
-          <p className="mt-4 text-subheading-2 max-w-2xl mx-auto">
+          <p className="text-blue-800 font-semibold text-base sm:text-lg md:text-xl">Lorem Ipsum</p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-heading-1 font-bold mt-2">
+            LOREM IPSUM DOLOR SIT
+          </h2>
+          <p className="mt-4 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
             Lorem ipsum dolor sit amet consectetur. Amet sodales sociis facilisis
             donec dui. Mi porttitor ut aliquam mattis maecenas eget integer in nam.
           </p>
 
-          {/* Card Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10 place-items-center">
+          {/* Responsive Card Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 md:gap-10 mt-10">
             {cards.map((card, index) => (
               <Card key={index} {...card} />
             ))}
@@ -64,4 +59,3 @@ function FeatureSection() {
 }
 
 export default FeatureSection;
-

@@ -1,57 +1,39 @@
+import { motion } from "framer-motion";
 import Image from "next/image";
 
-const HeroSection = () => {
+export default function MotorcycleSection() {
   return (
-    <section className="relative bg-gray-100 py-16 px-6 lg:px-20">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        {/* Left Content */}
-        <div>
-          <h1 className="text-3xl lg:text-4xl font-bold text-blue-800 uppercase leading-tight">
-            Lorem Ipsum Dolor Sit Amet Consectetur. Dignissim Tellus.
-          </h1>
-          <p className="mt-4 text-gray-700">
-            Lorem ipsum dolor sit amet consectetur. In malesuada morbi mi blandit 
-            laoreet urna sapien quam pulvinar. Dolor aliquet est tortor tincidunt 
-            ultricies feugiat mauris. Aliquam platea turpis porta nisl felis. 
-            Massa in facilisis semper libero eget eu quisque bibendum platea.
-          </p>
-          <button className="mt-6 px-6 py-3 bg-blue-600 text-white font-semibold rounded-md flex items-center gap-2 hover:bg-blue-700 transition">
-            Loerum Ipsum →
-          </button>
-        </div>
-
-        {/* Right Image */}
-        <div className="relative">
-          <div className="relative w-full h-[350px] lg:h-[450px]">
-            <Image
-              src="/image.png" // Change this to your actual image source
-              alt="People with scooter"
-              layout="fill"
-              objectFit="cover"
-              className="rounded-md shadow-lg"
-            />
-          </div>
-        </div>
+    <section className="flex flex-col lg:flex-row items-center justify-between px-6 lg:px-20 py-16 bg-gray-100 min-h-screen">
+      {/* Left Section (Text) */}
+      <div className="lg:w-1/2 text-center lg:text-left space-y-6">
+        <h4 className="text-gray-500 font-semibold uppercase tracking-wide">
+          No Limits
+        </h4>
+        <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
+          Lorem ipsum dolor sit amet
+        </h1>
+        <p className="text-gray-700 text-lg max-w-md mx-auto lg:mx-0">
+          Lorem ipsum dolor sit amet consectetur. Nisl faucibus vitae
+          porttitor pharetra tempor quis arcu. Ipsum nullam.
+        </p>
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="bg-blue-600 text-white px-6 py-3 rounded-md flex items-center justify-center gap-2 mx-auto lg:mx-0"
+        >
+          Lorem Ipsum →
+        </motion.button>
       </div>
 
-      {/* Info Card */}
-      <div className="absolute left-10 bottom-[-80px] bg-white p-6 rounded-lg shadow-lg max-w-md">
-        <h3 className="font-bold text-lg">Lorem ipsum dolor sit</h3>
-        <p className="mt-2 text-gray-700">
-          Lorem ipsum dolor sit amet consectetur. Habitant vestibulum vitae amet habitasse semper.
-        </p>
-        <p className="mt-2 text-gray-700">
-          Lorem ipsum dolor sit amet consectetur. Egestas congue mattis ut placerat vitae amet suspendisse fermentum velit.
-        </p>
-        <p className="mt-2 text-gray-700">
-          Lorem ipsum dolor sit amet consectetur. Hac netus consectetur amet quisque scelerisque facilisi.
-        </p>
+      {/* Right Section (Image Grid) */}
+      <div className="lg:w-1/2 grid grid-cols-3 grid-rows-3 gap-4 mt-12 lg:mt-0">
+        <Image src="/bike1.jpg" alt="bike1" className="w-full h-40 object-cover rounded-lg" />
+        <Image src="/bike2.jpg" alt="bike2" className="w-full h-40 object-cover rounded-lg col-span-2" />
+        <Image src="/bike3.jpg" alt="bike3" className="w-full h-60 object-cover rounded-lg row-span-2" />
+        <Image src="/bike4.jpg" alt="bike4" className="w-full h-40 object-cover rounded-lg" />
+        <Image src="/bike5.jpg" alt="bike5" className="w-full h-40 object-cover rounded-lg" />
+        <Image src="/bike6.jpg" alt="bike6" className="w-full h-40 object-cover rounded-lg col-span-2" />
       </div>
-
-      {/* Gradient Bar */}
-      <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-blue-600 via-green-500 to-purple-800"></div>
     </section>
   );
-};
-
-export default HeroSection;
+}
